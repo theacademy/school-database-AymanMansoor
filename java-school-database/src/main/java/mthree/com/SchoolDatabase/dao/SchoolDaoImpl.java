@@ -76,7 +76,7 @@ public class SchoolDaoImpl implements SchoolDao {
 
         String sql = "SELECT c.courseCode, c.courseDesc, COUNT(DISTINCT cs.student_id) AS numStudents " +
                 "FROM course c " +
-                "LEFT JOIN course_student cs ON c.cid = cs.course_id " +
+                "INNER JOIN course_student cs ON c.cid = cs.course_id " +  // Changed LEFT JOIN to INNER JOIN
                 "GROUP BY c.courseCode, c.courseDesc";
 
 
